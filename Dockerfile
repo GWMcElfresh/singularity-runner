@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     
 RUN git clone https://go.googlesource.com/go goroot 
 RUN cd goroot 
-RUN git checkout go1.21.10
+RUN git checkout go1.21.0
 
 #RUN chmod -R 777 /cmdstan/*
 #RUN R -e "library(cmdstanr);cmdstanr::set_cmdstan_path(path = list.dirs('/cmdstan')[[2]]);cpp_options <- list('CXX' = 'clang++','CXXFLAGS+'= '-march=native',PRECOMPILED_HEADERS = FALSE);rebuild_cmdstan()"
