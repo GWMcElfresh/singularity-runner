@@ -1,4 +1,4 @@
-FROM ghcr.io/docker-library/python
+FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
 ARG DEBIAN_FRONTEND=noninteractive
 
