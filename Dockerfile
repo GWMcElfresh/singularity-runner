@@ -2,7 +2,7 @@ FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN sudo apt-get update && sudo apt-get install -y \
+RUN apt-get update && apt-get install -y \
     build-essential \
     libssl-dev \
     uuid-dev \
