@@ -9,9 +9,9 @@ RUN sudo apt-get update && sudo apt-get install -y \
     libgpgme11-dev \
     squashfs-tools \
     libseccomp-dev \
-    pkg-config && \
-    git clone https://go.googlesource.com/go goroot && \
-    cd goroot && \
+    pkg-config \
+    git clone https://go.googlesource.com/go goroot \
+    cd goroot \
     git checkout go1.21.10
 
 #RUN chmod -R 777 /cmdstan/*
