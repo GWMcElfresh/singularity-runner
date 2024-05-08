@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     libgpgme11-dev \
     squashfs-tools \
     libseccomp-dev \
-    pkg-config 
+    pkg-config \
+    git-all
     
 RUN git clone https://go.googlesource.com/go goroot 
 RUN cd goroot 
