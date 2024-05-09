@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     libseccomp-dev \
     pkg-config \
     git-all \
-    golang-go 
+    singularity-container
     
 #RUN curl -L https://dl.google.com/go/go1.17.5.linux-amd64.tar.gz -o go1.17.5.linux-amd64.tar.gz
 #RUN tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
