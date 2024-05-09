@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
     git-all \
     wget 
 
+ENTRYPOINT ["/bin/bash", "-l", "-c"]
+
 #RUN wget https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/s/singularity-3.8.0-1.el8.x86_64.rpm && \
 #    alien -d singularity-3.8.0-1.el8.x86_64.rpm && \
 #    apt-get install ./singularity_3.8.0-2_amd64.deb
