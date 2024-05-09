@@ -11,9 +11,11 @@ RUN apt-get update && apt-get install -y \
     libseccomp-dev \
     pkg-config \
     git-all \
+    wget \
     alien
     
-RUN alien -d singularity-3.8.0-1.el8.x86_64.rpm && \
+RUN wget https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/s/singularity-3.8.0-1.el8.x86_64.rpm && \
+    alien -d singularity-3.8.0-1.el8.x86_64.rpm && \
     apt-get install ./singularity_3.8.0-2_amd64.deb
 #RUN curl -L https://dl.google.com/go/go1.17.5.linux-amd64.tar.gz -o go1.17.5.linux-amd64.tar.gz
 #RUN tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
