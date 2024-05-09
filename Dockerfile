@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ghcr.io/apptainer/apptainer:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -12,19 +12,7 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     git-all \
     wget 
-RUN export GOVERSION=1.20.10 OS=linux ARCH=amd64  # change this as you need
 
-RUN wget -O /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz \
-    https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
-    tar -C /usr/local -xzf /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz
-RUN echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-    source ~/.bashrc
-RUN git clone https://github.com/apptainer/apptainer.git && \
-    cd apptainer && \
-    ./mconfig && \
-    cd $(/bin/pwd)/builddir && \
-    make && \
-    make install
 #RUN wget https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/s/singularity-3.8.0-1.el8.x86_64.rpm && \
 #    alien -d singularity-3.8.0-1.el8.x86_64.rpm && \
 #    apt-get install ./singularity_3.8.0-2_amd64.deb
