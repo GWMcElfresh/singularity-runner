@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     libseccomp-dev \
     pkg-config \
     git-all \
-    wget 
+    wget \
+    zlib1g-dev
 
 RUN mkdir /GW_Python && \
   cd /GW_Python && \
