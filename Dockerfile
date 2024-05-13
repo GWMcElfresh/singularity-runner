@@ -13,7 +13,19 @@ RUN apt-get update && apt-get install -y \
     git-all \
     wget 
 
-ENTRYPOINT ["/bin/bash", "-l", "-c"]
+RUN mkdir /GW_Python && \
+  cd /GW_Python && \
+  wget http://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz && \
+  tar -zxvf Python-3.8.10.tgz && \
+  cd Python-3.8.10 && \
+  ./configure --prefix=/GW_Python && \ 
+  cd /GW_Python/Python-3.8.10 && \
+  make && \
+  make install && \
+  /GW_Python/bin/pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu && \
+  /GW_Python/bin/pip3 install pykan && \
+  /GW_Python/bin/pip3 install onnxruntime && \
+  chmod -R 777 /GW_Python
 
 #RUN wget https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/s/singularity-3.8.0-1.el8.x86_64.rpm && \
 #    alien -d singularity-3.8.0-1.el8.x86_64.rpm && \
