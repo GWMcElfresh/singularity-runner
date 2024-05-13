@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     git-all \
     wget \
-    zlib1g-dev
+    zlib1g-dev \
+    libffi-dev
 
 RUN mkdir /GW_Python && \
   cd /GW_Python && \
