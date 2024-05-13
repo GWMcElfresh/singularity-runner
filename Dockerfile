@@ -15,22 +15,21 @@ RUN apt-get update && apt-get install -y \
     libbz2-dev \
     zlib1g-dev \
     python3-dev \
-    libffi-dev
-
-RUN mkdir /GW_Python && \
-  cd /GW_Python && \
-  wget http://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz && \
-  tar -zxvf Python-3.8.10.tgz && \
-  cd Python-3.8.10 && \
-  ./configure --prefix=/GW_Python && \ 
-  cd /GW_Python/Python-3.8.10 && \
-  make && \
-  make install && \
-  /GW_Python/bin/pip3 install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas && \
-  /GW_Python/bin/pip3 install torch torchvision torchaudio && \
-  /GW_Python/bin/pip3 install pykan && \
-  /GW_Python/bin/pip3 install onnxruntime && \
-  chmod -R 777 /GW_Python
+    libffi-dev && \
+    mkdir /GW_Python && \
+    cd /GW_Python && \
+    wget http://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz && \
+    tar -zxvf Python-3.8.10.tgz && \
+    cd Python-3.8.10 && \
+    ./configure --prefix=/GW_Python && \ 
+    cd /GW_Python/Python-3.8.10 && \
+    make && \
+    make install && \
+    /GW_Python/bin/pip3 install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas && \
+    /GW_Python/bin/pip3 install torch torchvision torchaudio && \
+    /GW_Python/bin/pip3 install pykan && \
+    /GW_Python/bin/pip3 install onnxruntime && \
+    chmod -R 777 /GW_Python
 
 ENV NUMBA_CACHE_DIR=/work/numba_cache
 ENV MPLCONFIGDIR=/work/mpl_cache
