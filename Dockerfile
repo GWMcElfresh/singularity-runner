@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     make install && \
     /GW_Python/bin/pip3 install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas && \
     /GW_Python/bin/pip3 install torch torchvision torchaudio && \
-    /GW_Python/bin/pip3 install pykan && \
+    /GW_Python/bin/pip3 install git+https://github.com/KindXiaoming/pykan.git && \
     /GW_Python/bin/pip3 install onnxruntime && \
     chmod -R 777 /GW_Python
 
