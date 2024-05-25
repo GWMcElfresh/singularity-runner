@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     /GW_Python/bin/pip3 install torch torchvision torchaudio && \
     /GW_Python/bin/pip3 install git+https://github.com/KindXiaoming/pykan.git && \
     /GW_Python/bin/pip3 install onnxruntime && \
+    /GW_Python/bin/pip3 install dill && \
     chmod -R 777 /GW_Python
 
 ENV NUMBA_CACHE_DIR=/work/numba_cache
