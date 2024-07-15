@@ -1,7 +1,7 @@
 FROM ghcr.io/apptainer/apptainer:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
-
+ 
 RUN apt-get update && apt-get install -y \
     build-essential \
     libssl-dev \
@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     cd /GW_Python/Python-3.8.10 && \
     make && \
     make install && \
-    /GW_Python/bin/pip3 install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas && \
+    /GW_Python/bin/pip3 install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
     /GW_Python/bin/pip3 install torch torchvision torchaudio && \
     /GW_Python/bin/pip3 install git+https://github.com/KindXiaoming/pykan.git && \
     /GW_Python/bin/pip3 install onnxruntime && \
