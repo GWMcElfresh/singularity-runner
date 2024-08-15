@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     libseccomp-dev \
     pkg-config \
     git-all \
-    wget \ 
+    wget \
     libbz2-dev \
     zlib1g-dev \
     python3-dev \
