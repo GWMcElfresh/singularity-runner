@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     python3-pip \
     libffi-dev && \
-    pip3 --no-cache-dir --break-system-packages install  --no-cache-dir install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
+    pip3 --no-cache-dir --break-system-packages install install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
     pip3 --no-cache-dir --break-system-packages install torch torchvision torchaudio && \
     pip3 --no-cache-dir --break-system-packages install git+https://github.com/KindXiaoming/pykan.git && \
     mkdir /GW_Python && \
