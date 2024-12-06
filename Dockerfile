@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     python3-dev \
     libffi-dev && \
+    pip --no-cache-dir install  --no-cache-dir install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
+    pip --no-cache-dir install torch torchvision torchaudio && \
+    pip --no-cache-dir install git+https://github.com/KindXiaoming/pykan.git && \
     mkdir /GW_Python && \
     cd /GW_Python && \
     wget http://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz && \
@@ -25,11 +28,11 @@ RUN apt-get update && apt-get install -y \
     cd /GW_Python/Python-3.8.10 && \
     make && \
     make install && \
-    /GW_Python/bin/pip3 install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
-    /GW_Python/bin/pip3 install torch torchvision torchaudio && \
-    /GW_Python/bin/pip3 install git+https://github.com/KindXiaoming/pykan.git && \
-    /GW_Python/bin/pip3 install onnxruntime && \
-    /GW_Python/bin/pip3 install dill && \
+    /GW_Python/bin/pip3 --no-cache-dir install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
+    /GW_Python/bin/pip3 --no-cache-dir install torch torchvision torchaudio && \
+    /GW_Python/bin/pip3 --no-cache-dir install git+https://github.com/KindXiaoming/pykan.git && \
+    /GW_Python/bin/pip3 --no-cache-dir install onnxruntime && \
+    /GW_Python/bin/pip3 --no-cache-dir install dill && \
     chmod -R 777 /GW_Python
 
 ENV NUMBA_CACHE_DIR=/work/numba_cache
