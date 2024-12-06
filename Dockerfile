@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     libpython3-dev \
     libffi-dev && \
     #quash externally managed environment
-    rm -Rf /usr/lib/python3.12/EXTERNALLY-MANAGED && \
+    rm -Rf /usr/lib/python3.11/EXTERNALLY-MANAGED && \
     pip3 --no-cache-dir install install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
     pip3 --no-cache-dir install torch torchvision torchaudio --break-system-packages  && \
     pip3 --no-cache-dir install git+https://github.com/KindXiaoming/pykan.git --break-system-packages  && \
