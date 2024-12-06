@@ -16,9 +16,9 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     python3-dev \
     libffi-dev && \
-    pip --no-cache-dir install  --no-cache-dir install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
-    pip --no-cache-dir install torch torchvision torchaudio && \
-    pip --no-cache-dir install git+https://github.com/KindXiaoming/pykan.git && \
+    pip3 --no-cache-dir install  --no-cache-dir install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
+    pip3 --no-cache-dir install torch torchvision torchaudio && \
+    pip3 --no-cache-dir install git+https://github.com/KindXiaoming/pykan.git && \
     mkdir /GW_Python && \
     cd /GW_Python && \
     wget http://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz && \
