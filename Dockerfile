@@ -14,10 +14,13 @@ RUN apt-get update && apt-get install -y \
     wget \
     libbz2-dev \
     zlib1g-dev \
-    python3-dev \
+    python3-full \
     python3-pip \
+    libpython3-dev \
     libffi-dev && \
-    pip3 --no-cache-dir install install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml --break-system-packages && \
+    #quash externally managed environment
+    rm -Rf /usr/lib/python3.12/EXTERNALLY-MANAGED && \
+    pip3 --no-cache-dir install install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
     pip3 --no-cache-dir install torch torchvision torchaudio --break-system-packages  && \
     pip3 --no-cache-dir install git+https://github.com/KindXiaoming/pykan.git --break-system-packages  && \
     mkdir /GW_Python && \
