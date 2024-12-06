@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     libbz2-dev \
     zlib1g-dev \
     python3-dev \
+    python3-pip \
     libffi-dev && \
     pip3 --no-cache-dir install  --no-cache-dir install numpy scipy scikit-learn matplotlib tqdm sympy setuptools pandas pyyaml && \
     pip3 --no-cache-dir install torch torchvision torchaudio && \
