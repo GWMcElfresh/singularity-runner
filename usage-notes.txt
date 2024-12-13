@@ -1,0 +1,7 @@
+example script: 
+apptainer pull GW_Docker.sif docker://ghcr.io/gwmcelfresh/genie-in-a-model:nightly
+apptainer exec \ 
+  -B "${WD}:/work" \ 
+  -B "${HOME}:~/" \ 
+  GW_Docker.sif \ 
+  python -m /work/KAN_modeling.py
